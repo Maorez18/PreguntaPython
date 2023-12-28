@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.fondo{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}
+
+.letrero{
+    position: absolute;
+    z-index: 1;
+    width: 80%;
+    margin-top:15%;
+    margin-left: 7%;
+
+    animation-name:grande;
+    animation-duration:5s ;
+    animation-iteration-count:infinite;
+}
+
+.letrero:hover{
+    transform: scale(1.1,1.2);
+}

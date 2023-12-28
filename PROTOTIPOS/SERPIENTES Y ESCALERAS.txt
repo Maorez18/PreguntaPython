@@ -1,0 +1,8 @@
+SERPIENTES Y ESCALERAS
+-Muestre el numero que sasco el dado 
+-Tiempo que vaya sumando
+-Panel para escoger si jugara contra la maquina o alguien mas
+-Fichas(Panel de fichas para escoger)
+-Panel si gano o perdio(sonido)
+
+https://www.canva.com/design/DAFzxOLOeDg/fi2mvz8K7rFjoXM32q0aug/edit?utm_content=DAFzxOLOeDg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton

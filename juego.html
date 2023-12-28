@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Pregunta-piton</title>
+    <link rel="stylesheet" href="../Serpientes y Escaleras/CSS/juego.css">
+    <link rel="stylesheet" href="css/preguntas.css">
+</head>
+<body>
+<!--primer modal en donde escoges si juegas contra el computador o otro jugador-->
+<div id="miModal" class="modal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit">¿Contra quien quieres jugar?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn"><img id="btnComputadora" class="ficomp" src="../Serpientes y Escaleras/IMG/computadora.png" alt="fichas/computadora"></button>
+                <button type="button" class="btn"><img  id="btnJugadores" class="fijug" src="../Serpientes y Escaleras/IMG/jugadores.png" alt="jugadores"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal para escoger la ficha con la que jugaras contra el computador-->
+<div id="modalComputadora" class="modal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit">Escoge una ficha :)</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn fic" data-bs-dismiss="modal"><img id="ficha1.1" src="../Serpientes y Escaleras/IMG/c++.png" alt="ficha c++"></button>
+                <button type="button" class="btn fic" data-bs-dismiss="modal"><img id="ficha1.2" src="../Serpientes y Escaleras/IMG/php.png" alt="ficha php"></button>
+                <button type="button" class="btn fic" data-bs-dismiss="modal"><img id="ficha1.3" src="../Serpientes y Escaleras/IMG/python.png" alt="ficha python"></button>
+                <button type="button" class="btn fic" data-bs-dismiss="modal"><img class="fi4" id="ficha1.4" src="../Serpientes y Escaleras/IMG/javascript.png" alt="ficha javascript"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--si quieres jugar contra otro jugador entonces seran 2, 3 o 4 jugadores-->
+<div id="modalJugadores" class="modal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit">¿Cuantos jugadores seran?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn fich" id="dosjugadores"><img class="fi" src="../Serpientes y Escaleras/IMG/dos.png" alt="dosjugadores"></button>
+                <button type="button" class="btn fich" id="tresjugadores"><img  class="fi2" src="../Serpientes y Escaleras/IMG/tres.png" alt="tresjugadores"></button>
+                <button type="button" class="btn fich" id="cuatrojugadores"><img  class="fi3" src="../Serpientes y Escaleras/IMG/cuatro (2).png" alt="cuatrojugadores"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--fichas para cada jugador-->
+<div id="modalComputadora2" class="modal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit">Escoge una ficha jugador uno</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn fic" id="ficha3"><img src="../Serpientes y Escaleras/IMG/python.png" alt="ficha python"></button>
+                <button type="button" class="btn fic" id="ficha1"><img src="../Serpientes y Escaleras/IMG/c++.png" alt="ficha c++"></button>
+                <button type="button" class="btn fic" id="ficha2"><img src="../Serpientes y Escaleras/IMG/php.png" alt="ficha php"></button>
+                <button type="button" class="btn fic" id="ficha4"><img class="fi4" src="../Serpientes y Escaleras/IMG/javascript.png" alt="ficha javascript"></button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- MODALES PREGGUNTAS----------------------------------------------------------------------------------->
+<div class="modal" 
+        id="modal1" 
+        tabindex="1" 
+        aria-hidden="true" 
+        aria-labelledby="label-modal1"
+        data-bs-backdrop="static">
+            <!-- Caja de Dailogo -->
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg questions">
+                <!-- Contenido de la modal -->
+                <div class="modal-content">
+                    <!-- Contenido Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-tittle" id="tittle-modal"></h4>
+                    </div>
+                    <!-- Contenido preguntas-->
+                    <div class="modal-body">
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <p id="pregunta" class="question"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contenido respuestas-->
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-12 ">
+                                <button type="button" class="btn btn-modal blu" data-bs-dismiss="modal" id="option1" onclick="getAnswer(this)"></button>
+                            </div>
+                            <div class="col-12 ">
+                                <button type="button" class="btn btn-modal blu" data-bs-dismiss="modal" id="option2" onclick="getAnswer(this)"></button>
+                            </div>
+                            <div class="col-12 ">
+                                <button type="button" class="btn btn-modal blu" data-bs-dismiss="modal" id="option3" onclick="getAnswer(this)"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<!--RESPUESTAS------------------------------------------------------------------------------------------->
+
+<!--respuesta correcta-->
+
+<div id="correcto" class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+ 
+            <div class="modal-header">
+                <h5 class="tit">respuesta Correcta :D</h5>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn fic btn-dark" data-bs-dismiss="modal">aceptar</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!--respuesta incorrecta-->
+
+<div id="incorrecto" class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+ 
+            <div class="modal-header">
+                <h5 class="tit">respuesta Incorrecta :(</h5>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn fic btn-dark" data-bs-dismiss="modal">aceptar</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!--inicia usuario-->
+<div class="jugador">
+    <div id="jugad" class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+     
+                <div class="modal-header">
+                    <h5 class="tit">Jugador,dale click al dado para ver cuantos lugares corres</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn fic btn-dark" data-bs-dismiss="modal">aceptar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--computadora-->
+<div class="jugador">
+    <div id="compu" class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+     
+                <div class="modal-header">
+                    <h5 class="tit">Siguiente computadora</h5>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn fic btn-dark" data-bs-dismiss="modal">aceptar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--GANAR-->
+
+    <div id="ganar" class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+     
+                <div class="modal-header">
+                    <h5 class="tit" id="txtjugador"></h5>
+                </div>
+
+                <div class="modal-body">
+                            <img class="ganar1" src="../Serpientes y Escaleras/IMG/ganar-triunfar.gif" alt="ganaste">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn fic btn-dark" data-bs-dismiss="modal">aceptar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<div>
+    <img class="fonho" src="../Serpientes y Escaleras/IMG/hofon.png" alt="fondo hojas">
+    <img class="tablero" src="../Serpientes y Escaleras/IMG/tablero.png" alt="tablero">
+    <img class="madera" src="../Serpientes y Escaleras/IMG/Madera.png" alt="madera">
+    <img class="hojas" src="../Serpientes y Escaleras/IMG/Hojas.png" alt="hojas">
+    <img class="hojas2" src="../Serpientes y Escaleras/IMG/Hojas.png" alt="hojas">
+    <img class="hojas3" src="../Serpientes y Escaleras/IMG/Hojas.png" alt="hojas">
+
+    <a class="volver" href="../Serpientes y Escaleras/inicio.html">←</a>
+    <div class="temporizador" id="tiempo">00:00</div>
+</div>
+
+<button type="button" class="btn"><img class="dados" src="../Serpientes y Escaleras/IMG/dados.png" alt="dados"></button>
+<p id="numeroAleatorio" class="num"></p> 
+
+<div class="contador-balones">
+    <img src="img/c++.png" id="ball1" class="ball">
+    <img src="img/php.png" id="ball2" class="ball">
+    <img src="img/python.png" id="ball3" class="ball">
+    <img src="img/javascript.png" id="ball4" class="ball">
+</div>
+<audio autoplay>
+    <source src="media/DUNE Official Soundtrack _ Full Album - Hans Zimmer _ WaterTower(MP3_160K).mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+
+<script src="../Serpientes y Escaleras/JS/todo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* .btn-modal{
+    width: 100%;
+    margin: 5px;
+} */
+.modal-body{
+    background-color: #f5cea296;
+}
+
+.modal-body::-webkit-scrollbar{
+    width: 10px;
+}
+.modal-body::-webkit-scrollbar-thumb{
+    background-color:rgb(219, 219, 219);
+    border-radius: 10px;
+}
+
+.modal-footer{
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.modal-tittle{
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Fuent';
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(0 3px 5px rgb(168, 108, 28));
+}
+
+.blu{
+    width: 100%;
+    margin: 2px;
+    font-size: 1.2em;
+    /* font-family: 'Fuent'; */
+    background-color: rgb(26, 110, 26);
+    color: #ffffff;
+}
+
+.question{
+    font-size: larger;
+    font-family: monospace;
+}
